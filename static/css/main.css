@@ -6,124 +6,231 @@
 }
 
 body {
-    background-color: #000000;
+    background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
     color: #ffffff;
     min-height: 100vh;
 }
 
-.split {
+.hero-section {
     height: 100vh;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #1a1a1a, #000000);
+    position: relative;
+    overflow: hidden;
 }
 
-.left {
-    left: 0;
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    border-right: 1px solid #333;
-}
-
-.right {
-    right: 0;
-    background-color: #111111;
-}
-
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.hero-content {
     text-align: center;
+    animation: fadeInUp 1s ease-out;
 }
 
-.centered img {
-    width: 80%;
-    max-width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #007bff, #00d4ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #cccccc;
+}
+
+.hero-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 50px rgba(0, 123, 255, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.main-content {
+    padding: 4rem 0;
+    background: #111111;
 }
 
 .container {
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-label {
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    animation: slideInUp 0.8s ease-out;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.stat-card.positive {
+    border-left: 5px solid #28a745;
+}
+
+.stat-card.negative {
+    border-left: 5px solid #dc3545;
+}
+
+.stat-card h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card.positive h3 {
+    color: #28a745;
+}
+
+.stat-card.negative h3 {
+    color: #dc3545;
+}
+
+.form-section {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    padding: 3rem;
+    border-radius: 20px;
+    margin-bottom: 4rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    animation: slideInUp 1s ease-out;
+}
+
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
     color: #ffffff;
-    font-weight: 600;
-    font-size: 18px;
-    margin-bottom: 10px;
-    display: block;
 }
 
 textarea {
     width: 100%;
-    height: 120px;
-    padding: 15px;
+    height: 150px;
+    padding: 1.5rem;
     border: 2px solid #333;
-    border-radius: 8px;
+    border-radius: 15px;
     background-color: #2d2d2d;
     color: #ffffff;
     font-size: 16px;
     resize: vertical;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
 }
 
 textarea:focus {
     outline: none;
     border-color: #007bff;
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
 }
 
 input[type="submit"] {
+    width: 100%;
     background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
     border: none;
-    padding: 12px 30px;
-    border-radius: 6px;
-    font-size: 16px;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 15px;
 }
 
 input[type="submit"]:hover {
     background: linear-gradient(135deg, #0056b3, #004085);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
 }
 
-.coment-bottom {
-    background-color: #711010 !important;
-    border-radius: 8px;
-    margin-top: 20px;
+.reviews-section {
+    animation: slideInUp 1.2s ease-out;
 }
 
-.commented-section {
-    padding: 15px;
-    border-left: 4px solid #007bff;
-    margin: 10px 0;
-    background-color: #f5f1f1;
-    border-radius: 0 8px 8px 0;
-}
-
-hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #333, transparent);
-    margin: 15px 0;
-}
-
-.comments {
-    text-decoration: underline;
-    text-underline-position: under;
-    cursor: pointer;
+.reviews-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
     color: #ffffff;
+}
+
+.reviews-container {
+    display: grid;
+    gap: 1rem;
+}
+
+.review-item {
+    background: linear-gradient(135deg, #f2ebeb, #e8e4e4);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #007bff;
+    box-shadow: 0 4px 15px rgba(193, 184, 184, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.review-item:hover {
+    transform: translateX(10px);
+}
+
+.review-text {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+    }
+    to {
+        text-shadow: 0 0 30px rgba(0, 123, 255, 0.8);
+    }
 }

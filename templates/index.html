@@ -5,48 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}"></Link>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>App</title>
+    <title>Sentiment Analysis App</title>
 </head>
 <body>
-
-    <div class="split left">
-        <div class="centered">
-            <img src="../static/products/prod1.jpg" alt="">
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Sentiment Analysis</h1>
+            <p class="hero-subtitle">Analyze the sentiment of your text with AI</p>
+            <img src="{{url_for('static', filename='products/Bottle-Advertising-photography.jpg')}}" alt="" class="hero-image">
         </div>
     </div>
 
+    <div class="main-content">
+        <div class="container">
+            <div class="stats-section">
+                <div class="stat-card positive">
+                    <h3>{{ data.positive }}</h3>
+                    <p>Positive Sentiments</p>
+                </div>
+                <div class="stat-card negative">
+                    <h3>{{ data.negative }}</h3>
+                    <p>Negative Sentiments</p>
+                </div>
+            </div>
 
-    <div class="split right">
-        <div class="container mt-5 mb-5">
-            <div class="d-flex justify-content-center row">
-                <div class="d-flex flex-column col-md-8">
-                    <div>
-                        <label for="">Positive Sentiments : {{ data.positive }}</label>
+            <div class="form-section">
+                <h2>Analyze Your Text</h2>
+                <form method="post">
+                    <textarea name="text" placeholder="Enter your text here for sentiment analysis..."></textarea>
+                    <input type="submit" value="Analyze Sentiment">
+                </form>
+            </div>
+
+            <div class="reviews-section">
+                <h2>Recent Reviews</h2>
+                <div class="reviews-container">
+                    {% for review in data.reviews %}
+                    <div class="review-item">
+                        <span class="review-text">{{ review }}</span>
                     </div>
-                    <div>
-                        <label for="">Negative Sentiments : {{ data.negative }}</label>
-                    </div>
-                    <div>
-                        <form method="post">
-                          <textarea name="text"></textarea>
-                          <input type="submit">
-                        </form>
-                    </div>
-                    <div class="coment-bottom bg-white p-2 px-4">
-                        {% for review in data.reviews %}
-                        <hr/>
-                          <div class="commented-section mt-2">
-                              <div class="d-flex flex-row align-items-center commented-user"></div>
-                                  <div class="text-nowrap bd-highlight"><span>{{ review }}</span></div>
-                                  <hr/>
-                        {% endfor %}
-                       </div>
-                    </div>
-                   
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
-
 </body>
 </html>
