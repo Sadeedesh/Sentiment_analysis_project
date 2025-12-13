@@ -1,7 +1,3 @@
-import warnings
-from sklearn.exceptions import InconsistentVersionWarning
-warnings.filterwarnings("ignore", category=InconsistentVersionWarning)
-
 import numpy as np
 import pandas as pd
 import re
@@ -14,7 +10,9 @@ ps = PorterStemmer()
 # load model
 with open('static/model/model.pickle', 'rb') as f:
     model = pickle.load(f)
+   
 
+    
 # load stopwords
 with open('static/model/corpora/stopwords/english', 'r') as file:
     sw = file.read().splitlines()
@@ -27,7 +25,7 @@ def remove_punctuations(text):
     for punctuation in string.punctuation:
         text = text.replace(punctuation, '')
     return text
-
+   
 def preprocessing(text):
     data = pd.DataFrame([text], columns=['tweet'])
     data["tweet"] = data["tweet"].apply(lambda x: " ".join(x.lower() for x in x.split()))
@@ -54,9 +52,9 @@ def vectorizer(ds):
     return vectorized_lst_new 
 
 def get_prediction(vectorized_text):
-    prediction = model.predict(vectorized_text)
+    label= model.predict(vectorized_text)[0]
    
-    if prediction == 1:
+    if label == 1:
         return 'negative'
     else:
         return 'positive'
