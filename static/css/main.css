@@ -101,7 +101,13 @@ body {
 .stat-card.positive h3 {
     color: #28a745;
 }
+.stat-card.positive p {
+    color: #dadedb;
+}
 
+.stat-card.negative p {
+    color: #efe8e9;
+}
 .stat-card.negative h3 {
     color: #dc3545;
 }
@@ -111,7 +117,7 @@ body {
     padding: 3rem;
     border-radius: 20px;
     margin-bottom: 4rem;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 35px rgba(241, 238, 238, 0.4);
     animation: slideInUp 1s ease-out;
 }
 
