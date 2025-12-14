@@ -1,242 +1,323 @@
 * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0a0a0a;
     color: #ffffff;
-    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.hero-section {
-    height: 100vh;
+.app-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(circle at center, #1a1a1a, #000000);
-    position: relative;
+    height: 100vh;
     overflow: hidden;
 }
 
-.hero-content {
-    text-align: center;
-    animation: fadeInUp 1s ease-out;
+.sidebar {
+    width: 280px;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+    border-right: 1px solid #2a2a2a;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
 }
 
-.hero-title {
-    font-size: 4rem;
-    font-weight: 700;
+.brand {
+    margin-bottom: 3rem;
+}
+
+.logo {
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, #007bff, #00d4ff);
-    background-clip: text;
+}
+
+.brand-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #3B82F6, #1D4ED8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: #cccccc;
-}
-
-.hero-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 50px rgba(0, 123, 255, 0.3);
-    animation: float 3s ease-in-out infinite;
-}
-
-.main-content {
-    padding: 4rem 0;
-    background: #111111;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.stats-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
-}
-
-.stat-card {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-    animation: slideInUp 0.8s ease-out;
-}
-
-.stat-card:hover {
-    transform: translateY(-10px);
-}
-
-.stat-card.positive {
-    border-left: 5px solid #28a745;
-}
-
-.stat-card.negative {
-    border-left: 5px solid #dc3545;
-}
-
-.stat-card h3 {
-    font-size: 3rem;
-    font-weight: 700;
+    background-clip: text;
     margin-bottom: 0.5rem;
 }
 
-.stat-card.positive h3 {
-    color: #28a745;
-}
-.stat-card.positive p {
-    color: #dadedb;
-}
-
-.stat-card.negative p {
-    color: #efe8e9;
-}
-.stat-card.negative h3 {
-    color: #dc3545;
+.brand-tagline {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    font-weight: 400;
 }
 
-.form-section {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    padding: 3rem;
-    border-radius: 20px;
-    margin-bottom: 4rem;
-    box-shadow: 0 15px 35px rgba(241, 238, 238, 0.4);
-    animation: slideInUp 1s ease-out;
+.product-showcase {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: auto;
 }
 
-.form-section h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-    color: #ffffff;
-}
-
-textarea {
+.product-image {
     width: 100%;
-    height: 150px;
-    padding: 1.5rem;
-    border: 2px solid #333;
-    border-radius: 15px;
-    background-color: #2d2d2d;
-    color: #ffffff;
-    font-size: 16px;
-    resize: vertical;
-    transition: all 0.3s ease;
-    margin-bottom: 1.5rem;
-}
-
-textarea:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
-}
-
-input[type="submit"] {
-    width: 100%;
-    background: linear-gradient(135deg, #007bff, #0056b3);
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-input[type="submit"]:hover {
-    background: linear-gradient(135deg, #0056b3, #004085);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
-}
-
-.reviews-section {
-    animation: slideInUp 1.2s ease-out;
-}
-
-.reviews-section h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-    color: #ffffff;
-}
-
-.reviews-container {
-    display: grid;
-    gap: 1rem;
-}
-
-.review-item {
-    background: linear-gradient(135deg, #f2ebeb, #e8e4e4);
-    padding: 1.5rem;
-    border-radius: 10px;
-    border-left: 4px solid #007bff;
-    box-shadow: 0 4px 15px rgba(193, 184, 184, 0.2);
+    height: 280px;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.review-item:hover {
-    transform: translateX(10px);
+.product-image:hover {
+    transform: scale(1.05);
 }
 
-.review-text {
-    font-size: 16px;
-    line-height: 1.6;
+.showcase-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 1.5rem;
+    color: white;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.showcase-text {
+    font-weight: 500;
+    font-size: 0.875rem;
 }
 
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.main-content {
+    flex: 1;
+    background: #111111;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+.header {
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid #2a2a2a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@keyframes glow {
-    from {
-        text-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.status-indicator {
+    background: #10b981;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.dashboard {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: calc(100vh - 80px);
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.metric-card {
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.metric-card.positive {
+    border-left: 4px solid #10b981;
+}
+
+.metric-card.negative {
+    border-left: 4px solid #ef4444;
+}
+
+.metric-icon {
+    font-size: 2rem;
+}
+
+.metric-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.metric-card.positive .metric-value {
+    color: #10b981;
+}
+
+.metric-card.negative .metric-value {
+    color: #ef4444;
+}
+
+.metric-label {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.analysis-panel, .results-panel {
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    border: 1px solid #333333;
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.results-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.panel-header {
+    margin-bottom: 1.5rem;
+}
+
+.panel-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.panel-subtitle {
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.analysis-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 1rem;
+    background: #0a0a0a;
+    border: 2px solid #333333;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.875rem;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.input-group textarea:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.analyze-btn {
+    background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+    color: white;
+    border: none;
+    padding: 0.875rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.analyze-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.result-item {
+    background: #0a0a0a;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.result-item:hover {
+    border-color: #3B82F6;
+    transform: translateX(4px);
+}
+
+.result-content {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.result-timestamp {
+    color: #9ca3af;
+    font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
     }
-    to {
-        text-shadow: 0 0 30px rgba(0, 123, 255, 0.8);
+    
+    .sidebar {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .product-showcase {
+        display: none;
+    }
+    
+    .header {
+        padding: 1rem;
+    }
+    
+    .dashboard {
+        padding: 1rem;
     }
 }
