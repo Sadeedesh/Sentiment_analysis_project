@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #0a0a0a;
-    color: #ffffff;
+    background: #ffffff;
+    color: #000000;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -20,8 +20,8 @@ body {
 
 .sidebar {
     width: 280px;
-    background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
-    border-right: 1px solid #2a2a2a;
+    background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+    border-right: 1px solid #dee2e6;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -48,7 +48,7 @@ body {
 }
 
 .brand-tagline {
-    color: #9ca3af;
+    color: #6c757d;
     font-size: 0.875rem;
     font-weight: 400;
 }
@@ -76,7 +76,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    background: linear-gradient(transparent, rgba(242, 238, 238, 0.8));
     padding: 1.5rem;
     color: white;
 }
@@ -88,7 +88,7 @@ body {
 
 .main-content {
     flex: 1;
-    background: #111111;
+    background: #ffffff;
     height: 100vh;
     overflow-y: auto;
     display: flex;
@@ -97,7 +97,7 @@ body {
 
 .header {
     padding: 2rem 2.5rem;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid #dee2e6;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -106,7 +106,7 @@ body {
 .page-title {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #000000;
 }
 
 .header-actions {
@@ -138,8 +138,8 @@ body {
 }
 
 .metric-card {
-    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-    border: 1px solid #333333;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 1px solid #dee2e6;
     border-radius: 12px;
     padding: 1.5rem;
     display: flex;
@@ -191,8 +191,8 @@ body {
 }
 
 .analysis-panel, .results-panel {
-    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-    border: 1px solid #333333;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 1px solid #dee2e6;
     border-radius: 16px;
     padding: 1.5rem;
 }
@@ -233,10 +233,10 @@ body {
     width: 100%;
     min-height: 120px;
     padding: 1rem;
-    background: #0a0a0a;
-    border: 2px solid #333333;
+    background: #ffffff;
+    border: 2px solid #dee2e6;
     border-radius: 8px;
-    color: #ffffff;
+    color: #000000;
     font-size: 0.875rem;
     resize: vertical;
     transition: border-color 0.3s ease;
@@ -276,8 +276,8 @@ body {
 }
 
 .result-item {
-    background: #0a0a0a;
-    border: 1px solid #333333;
+    background: #ffffff;
+    border: 1px solid #dee2e6;
     border-radius: 8px;
     padding: 1rem;
     transition: all 0.3s ease;
